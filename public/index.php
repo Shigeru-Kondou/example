@@ -4,18 +4,42 @@ $debug = false;
 // Facebook API 使用準備
 // Facebook上のアプリ：キャンバスページのURL
 require('sdk/facebook.php');
-$APP_URL = "https://tradeprice.phpfogapp.com/"; // アプリ実行のURL
+require('parse_signed_request.php');
+$APP_ID  = "238489269614070";                   // アプリケーションID
+$SECRET  = "6c16b88cde92764ee1dca12a34bc90c3";  // シークレット
+$APP_URL = "https://app-388-1351560090.orchestra.io/"; // アプリ実行のURL
 
 // appIDとsecret を渡して php-SDK の使用開始
-$facebook = new Facebook(array('appId' => '334485126649907', 'secret' => '1d45ecc6c4e82b20a0cf391279640602'));
+$facebook = new Facebook(array('appId' => $APP_ID, 'secret' => $SECRET));
 
 // ■Facebookとアプリ間の情報を取得
 $signe = $facebook->getSignedRequest();
 // ■もしFacebook外で呼ばれていたらFacebookのURLへ移動
-//if (!$signe["oauth_token"]) {
-//  echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
-//  exit;
-//}
+if (!$signe["oauth_token"]) {
+  echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
+  exit;
+}
+
+
+// signed_requestはFacebook上でアプリが読みこまれた時に渡されます。
+// アプリのURLを直接たたいた場合などは分岐3になります。
+if(isset($_POST['signed_request'])){
+  $signed_request=$_POST['signed_request'];
+  $data = parse_signed_request($signed_request, $SECRET);
+  
+  // ユーザーが今見ているfacebookページをlikeしたかどうか。
+  // likeしている場合は1が返ります。
+  if(!$data["page"]["liked"]){
+    echo "「いいね！」を押してね！<br />\n";
+    var_dump( $_POST );
+    exit;
+  }
+}else {
+  // ここにはこないはず
+  echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
+  var_dump( $_POST );
+  exit;
+}
 
 try {
 
@@ -40,7 +64,7 @@ try {
 
 </head>
 <body>
-<img src="images/sky-810.jpg" width="701">
+<img src="images/sky-810.jpg" width="810">
 
 <div class="container">
 <h3>検索オプション</h3>
@@ -139,5 +163,27 @@ $(function() {
   $("#trades").tablesorter({ sortList: [[1,0]], widgets: ['zebra'] });
 });
 </script>
+<!-- Facebook JavaScript SDK -->
+<div id='fb-root'></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<?php echo $APP_ID ?>";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script type='text/javascript'>
+  window.fbAsyncInit = function() {
+    FB.init({ 
+      appId : '<?php echo $APP_ID ?>',
+      status : true, 
+      cookie : true,
+      xfbml : true,
+      logging : true
+    });
+    /* キャンバスのサイズ(px) */
+    FB.Canvas.setSize({ width:810,height:400 });
+  }
+</script><!-- Facebook JavaScript SDK // -->
 </body>
 </html>
