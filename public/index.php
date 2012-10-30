@@ -55,6 +55,7 @@ if(isset($_POST['signed_request'])){
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
+<div id='fb-root'>
 
 <?php
 if ( $debug ) {
@@ -172,29 +173,12 @@ $(function() {
   $("#trades").tablesorter({ sortList: [[1,0]], widgets: ['zebra'] });
 });
 </script>
-<!-- Facebook JavaScript SDK -->
-<div id='fb-root'></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<?php echo $APP_ID ?>";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script type='text/javascript'>
-  window.fbAsyncInit = function() {
-    FB.init({ 
-      appId : '<?php echo $APP_ID ?>',
-      status : true, 
-      cookie : true,
-      xfbml : true,
-      logging : true
-    });
-    //FB.Canvas.setSize({ width:810,height:400 });
-  }
-</script><!-- Facebook JavaScript SDK // -->
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
+  FB.Canvas.setAutoGrow();
+};
 <?php
 } // end of else
 ?>
-</body>
-</html>
+</div></body></html>
