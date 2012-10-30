@@ -40,7 +40,7 @@ try {
 
 </head>
 <body>
-<img src="sky-810.jpg" width="701">
+<img src="images/sky-810.jpg" width="701">
 
 <div class="container">
 <h3>検索オプション</h3>
