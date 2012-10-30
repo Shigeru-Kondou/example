@@ -31,7 +31,7 @@ if(isset($_POST['signed_request'])){
   // ユーザーが今見ているfacebookページをlikeしたかどうか。
   // likeしている場合は1が返ります。
   if(!$data["page"]["liked"]){
-    include_onde("pleaselike.php");
+    include_once("pleaselike.php");
     var_dump( $_POST );
     exit;
   }
