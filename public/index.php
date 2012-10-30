@@ -1,5 +1,5 @@
 <?php
-$debug = false;
+$debug = true;
 
 // Facebook API 使用準備
 // Facebook上のアプリ：キャンバスページのURL
@@ -57,7 +57,10 @@ if(isset($_POST['signed_request'])){
 <body>
 
 <?php
-if( $like_flag==0 ){
+if ( $debug ) {
+  echo ("LIKE FLAG:".$like_flag."<br/>\n");
+}
+if ( $like_flag==0 ){
 echo "いいねをおしてください\n<br />";
 } else {
 try {
