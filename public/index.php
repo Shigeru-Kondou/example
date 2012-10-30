@@ -89,7 +89,7 @@ try {
   if($count%$wrap!=0) echo "</tr>\n" ;
 ?>
 </table>
-<input type="hidden" name="signed_request" value="<?php echo (isset($_POST['signed_request'])?$_POST['signed_request']):''); ?>">
+<input type="hidden" name="signed_request" value="<?php echo (isset($_POST['signed_request'])?$_POST['signed_request']:''); ?>">
 <button type="submit" class="btn btn-mini">検索</button> <button type="reset" class="btn btn-mini">元に戻す</button>
 </fieldset></form>
 </div><!-- container -->
