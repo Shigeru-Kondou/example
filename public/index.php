@@ -7,7 +7,7 @@ require('sdk/facebook.php');
 require('parse_signed_request.php');
 $APP_ID  = "238489269614070";                   // アプリケーションID
 $SECRET  = "6c16b88cde92764ee1dca12a34bc90c3";  // シークレット
-$APP_URL = "https://app-388-1351560090.orchestra.io/"; // アプリ実行のURL
+$APP_URL = "http://apps.facebook.com/trade-pricing/"; // アプリ実行のURL
 
 // appIDとsecret を渡して php-SDK の使用開始
 $facebook = new Facebook(array('appId' => $APP_ID, 'secret' => $SECRET));
