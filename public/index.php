@@ -31,7 +31,7 @@ if(isset($_POST['signed_request'])){
   
   // ユーザーが今見ているfacebookページをlikeしたかどうか。
   // likeしている場合は1が返ります。
-  if($data["page"]["liked"]){
+  if(is_set($data["page"]["linked"]) && $data["page"]["liked"]){
     $like_flag=1;
   }else{
     $like_flag=0;
