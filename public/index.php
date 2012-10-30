@@ -3,8 +3,8 @@ $debug = false;
 
 // Facebook API 使用準備
 // Facebook上のアプリ：キャンバスページのURL
-require('sdk/facebook.php');
-require('parse_signed_request.php');
+require_once 'sdk/facebook.php';
+require_once 'parse_signed_request.php';
 $APP_ID  = "238489269614070";                   // アプリケーションID
 $SECRET  = "6c16b88cde92764ee1dca12a34bc90c3";  // シークレット
 $APP_URL = "http://apps.facebook.com/trade-pricing/"; // アプリ実行のURL

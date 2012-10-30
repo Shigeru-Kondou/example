@@ -1,9 +1,9 @@
 <?php
-// 
+
 // 
 // https://developers.facebook.com/docs/howtos/login/signed-request/
 //
-public function parse_signed_request($signed_request, $secret) {
+function parse_signed_request($signed_request, $secret) {
   list($encoded_sig, $payload) = explode('.', $signed_request, 2); 
 
   // decode the data
@@ -25,7 +25,7 @@ public function parse_signed_request($signed_request, $secret) {
   return $data;
 }
 
-public function base64_url_decode($input) {
+function base64_url_decode($input) {
   return base64_decode(strtr($input, '-_', '+/'));
 }
 ?>
