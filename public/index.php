@@ -1,5 +1,5 @@
 <?php
-$debug = false;
+$debug = true;
 
 // Facebook API 使用準備
 // Facebook上のアプリ：キャンバスページのURL
