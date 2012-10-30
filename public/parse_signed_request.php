@@ -1,4 +1,4 @@
-<? php
+<?php
 // 
 // 
 // https://developers.facebook.com/docs/howtos/login/signed-request/
