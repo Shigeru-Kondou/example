@@ -13,12 +13,12 @@ $APP_URL = "http://apps.facebook.com/trade-pricing/"; // アプリ実行のURL
 $facebook = new Facebook(array('appId' => $APP_ID, 'secret' => $SECRET));
 
 // ■Facebookとアプリ間の情報を取得
-$signe = $facebook->getSignedRequest();
+//$signe = $facebook->getSignedRequest();
 // ■もしFacebook外で呼ばれていたらFacebookのURLへ移動
-if (!$signe["oauth_token"]) {
-  echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
-  exit;
-}
+//if (!$signe["oauth_token"]) {
+//  echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
+//  exit;
+//}
 
 
 // signed_requestはFacebook上でアプリが読みこまれた時に渡されます。
