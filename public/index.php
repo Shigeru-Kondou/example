@@ -28,7 +28,7 @@ if(isset($_POST['signed_request'])){
   }
 }else {
   // URL直打ちの時など
-  echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
+  //echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
   if ( $debug ) var_dump( $_POST );
   $like_flag=2;
 }
