@@ -26,6 +26,7 @@ $facebook = new Facebook(array('appId' => $APP_ID, 'secret' => $SECRET));
 if(isset($_POST['signed_request'])){
   $signed_request=$_POST['signed_request'];
   $data = parse_signed_request($signed_request, $SECRET);
+  var_dump( $data );
   
   // ユーザーが今見ているfacebookページをlikeしたかどうか。
   // likeしている場合は1が返ります。
@@ -38,7 +39,6 @@ if(isset($_POST['signed_request'])){
     echo "<body>\n";
     echo "「いいね！」を押してね！<br />\n";
     var_dump( $_POST );
-    var_dump( $data );
     echo "</body></html>\n";
     exit;
   }
