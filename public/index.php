@@ -23,6 +23,7 @@ $facebook = new Facebook(array('appId' => $APP_ID, 'secret' => $SECRET));
 
 // signed_requestはFacebook上でアプリが読みこまれた時に渡されます。
 // アプリのURLを直接たたいた場合などは分岐3になります。
+$like_flag=0;
 if(isset($_POST['signed_request'])){
   $signed_request=$_POST['signed_request'];
   $data = parse_signed_request($signed_request, $SECRET);
@@ -31,16 +32,18 @@ if(isset($_POST['signed_request'])){
   // ユーザーが今見ているfacebookページをlikeしたかどうか。
   // likeしている場合は1が返ります。
   if(!$data["page"]["liked"]){
-    include_once("pleaselike.php");
-    var_dump( $_POST );
-    exit;
+    $like_flag=0;
+  }else{
+    $like_flag=1;
   }
 }else {
   // ここにはこないはず
   echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
   var_dump( $_POST );
-  exit;
+  $like_flag=2;
 }
+
+
 
 try {
 
@@ -65,6 +68,11 @@ try {
 
 </head>
 <body>
+<?php
+if( $like_flag==0 ){
+echo "いいねをおしてください"\n<br />";
+} else {
+?>
 <img src="images/sky-810.jpg" width="810">
 
 <div class="container">
@@ -186,5 +194,8 @@ $(function() {
     FB.Canvas.setSize({ width:810,height:400 });
   }
 </script><!-- Facebook JavaScript SDK // -->
+<?php
+} // end of else
+?>
 </body>
 </html>
