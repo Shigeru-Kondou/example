@@ -12,22 +12,12 @@ $APP_URL = "https://apps.facebook.com/trade-pricing/"; // アプリ実行のURL
 // appIDとsecret を渡して php-SDK の使用開始
 $facebook = new Facebook(array('appId' => $APP_ID, 'secret' => $SECRET));
 
-// ■Facebookとアプリ間の情報を取得
-//$signe = $facebook->getSignedRequest();
-// ■もしFacebook外で呼ばれていたらFacebookのURLへ移動
-//if (!$signe["oauth_token"]) {
-//  echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
-//  exit;
-//}
-
-
 // signed_requestはFacebook上でアプリが読みこまれた時に渡されます。
-// アプリのURLを直接たたいた場合などは分岐3になります。
 $like_flag=0;
 if(isset($_POST['signed_request'])){
   $signed_request=$_POST['signed_request'];
   $data = parse_signed_request($signed_request, $SECRET);
-  var_dump( $data );
+  if ( $debug ) var_dump( $data );
   
   // ユーザーが今見ているfacebookページをlikeしたかどうか。
   // likeしている場合は1が返ります。
@@ -37,9 +27,9 @@ if(isset($_POST['signed_request'])){
     $like_flag=0;
   }
 }else {
-  // ここにはこないはず
+  // URL直打ちの時など
   echo "<script type='text/javascript'>top.location.href = '$APP_URL';</script>";
-  var_dump( $_POST );
+  if ( $debug ) var_dump( $_POST );
   $like_flag=2;
 }
 ?>
@@ -58,11 +48,10 @@ if(isset($_POST['signed_request'])){
 <div id='fb-root'>
 
 <?php
-if ( $debug ) {
-  echo ("LIKE FLAG:".$like_flag."<br/>\n");
-}
+if ( $debug ) echo ("LIKE FLAG:".$like_flag."<br/>\n");
+
 if ( $like_flag==0 ){
-echo "いいねをおしてください\n<br />";
+  echo "いいねをおしてください\n<br />";
 } else {
 try {
   require('database.php');
@@ -74,7 +63,7 @@ try {
   
 ?>
 
-<img src="images/sky-810.jpg" width="790">
+<img src="images/sky-810-2.png" width="810">
 
 <div class="container">
 <h3>検索オプション</h3>
