@@ -30,8 +30,15 @@ if(isset($_POST['signed_request'])){
   // ユーザーが今見ているfacebookページをlikeしたかどうか。
   // likeしている場合は1が返ります。
   if(!$data["page"]["liked"]){
+    echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n";
+    echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+    echo "<head>\n";
+    echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n";
+    echo "</head>\n";
+    echo "<body>\n";
     echo "「いいね！」を押してね！<br />\n";
     var_dump( $_POST );
+    echo "</body></html>\n";
     exit;
   }
 }else {
