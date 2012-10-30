@@ -38,6 +38,7 @@ if(isset($_POST['signed_request'])){
     echo "<body>\n";
     echo "「いいね！」を押してね！<br />\n";
     var_dump( $_POST );
+    var_dump( $data );
     echo "</body></html>\n";
     exit;
   }
