@@ -157,15 +157,13 @@ $pdo = null;
 
 <br>
 
-<script>
+<script type="text/javascript">
 $(function() {
   $("#trades").tablesorter({ sortList: [[1,0]], widgets: ['zebra'] });
 });
-</script>
-<script type="text/javascript">
 window.fbAsyncInit = function() {
   FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
-  FB.Canvas.setAutoGrow();
+  FB.Canvas.setAutoGrow({ width: 810, height: 1280 });
 };
 <?php
 } // end of else
