@@ -51,7 +51,7 @@ if(isset($_POST['signed_request'])){
 if ( $debug ) echo ("LIKE FLAG:".$like_flag."<br/>\n");
 
 if ( $like_flag==0 ){
-  echo "<img src="images/sky-810-4.png" width="810">\n";
+  echo "<img src=\"images/sky-810-4.png\" width=\"810\">\n";
 } else {
 try {
   require('database.php');
