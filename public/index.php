@@ -190,8 +190,7 @@ $(function() {
       xfbml : true,
       logging : true
     });
-    /* キャンバスのサイズ(px) */
-    FB.Canvas.setSize({ width:810,height:400 });
+    //FB.Canvas.setSize({ width:810,height:400 });
   }
 </script><!-- Facebook JavaScript SDK // -->
 <?php
