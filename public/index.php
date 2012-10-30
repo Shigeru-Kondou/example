@@ -67,7 +67,8 @@ try {
 
 <div class="container">
 <h3>検索オプション</h3>
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"><fieldset>
+<!-- form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"><fieldset -->
+<form action="<?php echo ("https://" . $_SERVER["HTTP_HOST"]); ?>" method="post"><fieldset>
 <table class="table-striped">
 <?php
   if($debug && isset($_POST["areaname"])) {
