@@ -74,7 +74,7 @@ try {
   
 ?>
 
-<img src="images/sky-810.jpg" width="810">
+<img src="images/sky-810.jpg" width="790">
 
 <div class="container">
 <h3>検索オプション</h3>
