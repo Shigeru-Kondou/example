@@ -42,11 +42,25 @@ if(isset($_POST['signed_request'])){
   var_dump( $_POST );
   $like_flag=2;
 }
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>取引価格検索</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/blue/style.css" rel="stylesheet">
+<link href="css/adjust.css"     rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+</head>
+<body>
 
-
-
+<?php
+if( $like_flag==0 ){
+echo "いいねをおしてください\n<br />";
+} else {
 try {
-
   require('database.php');
   
   $pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
@@ -68,11 +82,6 @@ try {
 
 </head>
 <body>
-<?php
-if( $like_flag==0 ){
-echo "いいねをおしてください\n<br />";
-} else {
-?>
 <img src="images/sky-810.jpg" width="810">
 
 <div class="container">
