@@ -70,7 +70,7 @@ try {
 <body>
 <?php
 if( $like_flag==0 ){
-echo "いいねをおしてください"\n<br />";
+echo "いいねをおしてください\n<br />";
 } else {
 ?>
 <img src="images/sky-810.jpg" width="810">
