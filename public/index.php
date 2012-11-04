@@ -57,7 +57,7 @@ if ( $debug ) echo ("LIKE FLAG:".$like_flag."<br/>\n");
 
 if ( $like_flag==0 && !$local ){
   // いいねを促す画面を表示
-  echo "<img src=\"images/sky-810-4.png\" width=\"810\">\n";
+  echo "<img src=\"images/sky-810-4.png\" width=\"810\">\n</div><!-- fb-root -->\n";
 } else {
 try {
   if( $local ) {
@@ -148,10 +148,9 @@ try {
 </div><!-- container -->
 
 <br />
-
-
-
 <br />
+
+<div class="container">
 <table id="trades" class="tablesorter">
 <?php
   // POST データがあればクエリに where 句を追加する。
@@ -189,10 +188,9 @@ try {
 $pdo = null;
 ?>
 </table>
+</div><!-- container -->
+</div><!-- fb-root -->
 
-<br>
-
-</div>
 <script type="text/javascript">
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
