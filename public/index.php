@@ -183,13 +183,10 @@ $pdo = null;
 ?>
 </table>
 
+<div id='fb-root'></div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
-$(function() {
-  $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
-});
-<div id='fb-root'></div>
 <script type="text/javascript">
 (function() {
   var d = document;
@@ -201,6 +198,9 @@ window.fbAsyncInit = function() {
   FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true});
   FB.Canvas.setAutoGrow();
 }
+$(function() {
+  $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
+});
 </script>
 
 <?php
