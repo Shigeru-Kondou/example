@@ -199,6 +199,7 @@ window.fbAsyncInit = function() {
 }
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
+  alert("called");
 });
 </script>
 
