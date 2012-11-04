@@ -195,18 +195,12 @@ $pdo = null;
 
 <div id="fb-root"></div>
 <script type="text/javascript">
-//(function() {
-//    var e = document.createElement('script'); e.async = true;
-//    e.src = document.location.protocol + '//connect.facebook.net/ja_JP/all.js';
-//    document.getElementById('fb-root').appendChild(e);
-//}());
 window.fbAsyncInit = function() {
   FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true});
   FB.Canvas.setAutoGrow();
 };
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
-  alert ("called");
 }());
 </script>
 
