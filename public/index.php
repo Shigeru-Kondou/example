@@ -44,10 +44,8 @@ if(isset($_POST['signed_request'])){
 <title>取引価格検索</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link href="css/blue/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/blue/style.css">
 <link rel="stylesheet" href="css/adjust.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
 <?php
@@ -73,7 +71,6 @@ try {
 
 <div class="container">
 <h3>検索オプション</h3>
-<!-- form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"><fieldset -->
 <form action="<?php echo ( ($local?"http://":"https://") . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>" method="post"><fieldset>
 <table class="table-striped"><thead></thead>
 <tbody>
@@ -189,24 +186,30 @@ try {
 $pdo = null;
 ?>
 </table>
-
 </div>
-<br>
+
+<br />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+
 <div id="fb-root"></div>
 <script type="text/javascript">
-(function() {
-    var e = document.createElement('script'); e.async = true;
-    e.src = document.location.protocol + '//connect.facebook.net/ja_JP/all.js';
-    document.getElementById('fb-root').appendChild(e);
-}());
+//(function() {
+//    var e = document.createElement('script'); e.async = true;
+//    e.src = document.location.protocol + '//connect.facebook.net/ja_JP/all.js';
+//    document.getElementById('fb-root').appendChild(e);
+//}());
+window.fbAsyncInit = function() {
+  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true});
+  FB.Canvas.setAutoGrow();
+};
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
-});
-window.fbAsyncInit = function() {
-  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
-  FB.Canvas.setAutoGrow({ width: 810, height: 1280 });
-};
+  alert ("called");
+}());
 </script>
+
 <?php
 } // end of else
 ?>
