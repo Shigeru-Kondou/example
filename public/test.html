@@ -5,10 +5,8 @@
 <title>取引価格検索</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link href="css/blue/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/blue/style.css">
 <link rel="stylesheet" href="css/adjust.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
 <div id='fb-root'></div>
@@ -41,7 +39,7 @@
 <tr><td><label class="checkbox inline"><input type="checkbox" name="areaname[]" value="字河原" />字河原</label></td></tr>
 </tbody>
 </table>
-<input type="hidden" name="signed_request" value="zeUfoJ3wFxKl47Kd4tGtlB3jCsC-35oIclTpG9ODX5A.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTM1MjAzMDUzNCwicGFnZSI6eyJpZCI6IjQ2Nzc3MzgyOTkyOTU1NiIsImxpa2VkIjp0cnVlLCJhZG1pbiI6dHJ1ZX0sInVzZXIiOnsiY291bnRyeSI6ImpwIiwibG9jYWxlIjoiamFfSlAiLCJhZ2UiOnsibWluIjoyMX19fQ">
+<input type="hidden" name="signed_request" value="0EXdtFTX14HOagnolKhSbzajyRTRL1ItDNa5TtgS3Eg.eyJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTM1MjAzMzExMCwicGFnZSI6eyJpZCI6IjQ2Nzc3MzgyOTkyOTU1NiIsImxpa2VkIjp0cnVlLCJhZG1pbiI6dHJ1ZX0sInVzZXIiOnsiY291bnRyeSI6ImpwIiwibG9jYWxlIjoiamFfSlAiLCJhZ2UiOnsibWluIjoyMX19fQ">
 <button type="submit" class="btn btn-mini">検索</button> <button type="reset" class="btn btn-mini">元に戻す</button>
 </fieldset></form>
 </div><!-- container -->
@@ -408,7 +406,7 @@
 <td></td><td align="right"></td><td></td><td>H19.4Q</td><td></td></tr>
 <tr><td>字志高</td><td>農地</td><td></td><td align="right">2400000</td><td align="right"></td>
 <td align="right">410</td><td align="right"></td><td></td><td align="right"></td><td></td>
-<td></td><td align="right"></td><td></td><td>H19.4Q</td><td></td></tr>
+<td></td><td align="right"></td><td></td><td>H19.4Qtd><td></td></tr>
 <tr><td>字志高</td><td>農地</td><td></td><td align="right">2200000</td><td align="right"></td>
 <td align="right">460</td><td align="right"></td><td></td><td align="right"></td><td></td>
 <td></td><td align="right"></td><td></td><td>H19.4Q</td><td></td></tr>
@@ -1022,7 +1020,7 @@
 <td align="right">330</td><td align="right">39000</td><td>不整形</td><td align="right">9</td><td>南西</td>
 <td>市道</td><td align="right">11.00</td><td>2住</td><td>H21.1Q</td><td></td></tr>
 <tr><td>溝尻町</td><td>宅地(土地と建物)</td><td>東舞鶴-21</td><td align="right">9000000</td><td align="right"></td>
-<td align="right">170</td><td align="right"></td><td>ほぼ長方形</td><td align="right">9</td><td>南西</td>
+<td align="right">170</td><td align="right"></td><td>ほぼ長方形</td><td align="right">9</td><td>南西/td>
 <td>市道</td><td align="right">5.50</td><td>1住</td><td>H21.1Q</td><td></td></tr>
 <tr><td>溝尻町</td><td>宅地(土地)</td><td>東舞鶴-30分-60分</td><td align="right">9300000</td><td align="right">180000</td>
 <td align="right">170</td><td align="right">55000</td><td>ほぼ台形</td><td align="right">12</td><td>北西</td>
@@ -2277,7 +2275,7 @@
 <td>市道</td><td align="right">8.00</td><td>商業</td><td>H24.2Q</td><td></td></tr>
 <tr><td>字真倉</td><td>宅地(土地)</td><td>真倉-14</td><td align="right">3000000</td><td align="right">24000</td>
 <td align="right">430</td><td align="right">7200</td><td>不整形</td><td align="right">26</td><td>南東</td>
-<td>市道</td><td align="right">6.20</td><td>準工</td><td>H24.2Q</td><td></td></tr>
+<td>市道</td><td align="right">6.20td><td>準工</td><td>H24.2Q</td><td></td></tr>
 <tr><td>丸山中町</td><td>宅地(土地)</td><td>東舞鶴-17</td><td align="right">13000000</td><td align="right">200000</td>
 <td align="right">210</td><td align="right">62000</td><td>ほぼ長方形</td><td align="right">10</td><td>南</td>
 <td>市道</td><td align="right">5.50</td><td>1低</td><td>H24.2Q</td><td></td></tr>
@@ -2311,6 +2309,8 @@
 </tbody>
 </table>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
