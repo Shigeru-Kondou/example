@@ -57,6 +57,7 @@ if(isset($_POST['signed_request'])){
   d.getElementById('fb-root').appendChild(e);
 }());
 window.fbAsyncInit = function() {
+  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true});
   FB.Canvas.setAutoGrow();
 }
 </script>
