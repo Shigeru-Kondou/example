@@ -115,10 +115,11 @@ window.fbAsyncInit = function() {
   FB.init({appId: '238489269614070', status: true, cookie: true});
   FB.Canvas.setAutoGrow();
 }
-$(function() {
+</script>
+<script type="text/javascript">
+(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
-  alert("called");
-});
+}());
 </script>
 
 </body></html>
