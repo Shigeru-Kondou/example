@@ -50,14 +50,14 @@ if(isset($_POST['signed_request'])){
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
-<div id='fb-root'>
+<div id='fb-root'></div>
 
 <?php
 if ( $debug ) echo ("LIKE FLAG:".$like_flag."<br/>\n");
 
 if ( $like_flag==0 && !$local ){
   // いいねを促す画面を表示
-  echo "<img src=\"images/sky-810-4.png\" width=\"810\">\n</div><!-- fb-root -->\n";
+  echo "<img src=\"images/sky-810-4.png\" width=\"810\">\n";
 } else {
 try {
   if( $local ) {
@@ -150,7 +150,6 @@ try {
 <br />
 <br />
 
-<div class="container">
 <table id="trades" class="tablesorter">
 <?php
   // POST データがあればクエリに where 句を追加する。
@@ -188,8 +187,6 @@ try {
 $pdo = null;
 ?>
 </table>
-</div><!-- container -->
-</div><!-- fb-root -->
 
 <script type="text/javascript">
 $(function() {
