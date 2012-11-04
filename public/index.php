@@ -192,10 +192,10 @@ $pdo = null;
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
 });
-window.fbAsyncInit = function() {
-  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
-  FB.Canvas.setAutoGrow({ width: 810, height: 1280 });
-};
+//window.fbAsyncInit = function() {
+//  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
+//  FB.Canvas.setAutoGrow({ width: 810, height: 1280 });
+//};
 </script>
 <?php
 } // end of else
