@@ -183,10 +183,10 @@ $pdo = null;
 ?>
 </table>
 
-<div id='fb-root'></div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
+<div id='fb-root'></div>
 <script type="text/javascript">
 (function() {
   var d = document;
