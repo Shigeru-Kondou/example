@@ -191,8 +191,14 @@ $pdo = null;
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
 });
+(function() {
+  var e = document.createElement('script'); e.async = true;
+  e.src = document.location.protocol + '//connect.facebook.net/ja_JP/all.js';
+  document.getElementById('fb-root').appendChild(e);
+}());
 window.fbAsyncInit = function() {
-  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
+  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true});
+  //FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
   //FB.Canvas.setAutoGrow({ width: 810, height: 1280 });
   FB.Canvas.setAutoGrow();
 };
