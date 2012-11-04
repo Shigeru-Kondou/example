@@ -50,8 +50,6 @@ if(isset($_POST['signed_request'])){
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
-<div id='fb-root'>
-
 <?php
 if ( $debug ) echo ("LIKE FLAG:".$like_flag."<br/>\n");
 
@@ -143,15 +141,17 @@ try {
 <tr><td>準都</td><td>準都市計画区域</td><td>区外</td><td>都市計画区域外</td></tr>
 </tbody>
 </table>
+</div>
+
+<div class="container">
 <h3>本サービスについて</h3>
 <p>本サービスのデータについては、<a href="http://www.land.mlit.go.jp/webland/download.html" target="_brank">国土交通省不動産取引価格情報</a>ダウンロードサービスを使用しております。</p>
 </div><!-- container -->
 
 <br />
-
-
-
 <br />
+
+<div class="container">
 <table id="trades" class="tablesorter">
 <?php
   // POST データがあればクエリに where 句を追加する。
@@ -190,10 +190,15 @@ $pdo = null;
 ?>
 </table>
 
-<br>
-
 </div>
+<br>
+<div id="fb-root"></div>
 <script type="text/javascript">
+(function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol + '//connect.facebook.net/ja_JP/all.js';
+    document.getElementById('fb-root').appendChild(e);
+}());
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
 });
