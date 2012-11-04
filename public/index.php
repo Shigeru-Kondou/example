@@ -43,9 +43,9 @@ if(isset($_POST['signed_request'])){
 <head>
 <title>取引価格検索</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/blue/style.css">
-<link rel="stylesheet" href="css/adjust.css">
+<link rel="stylesheet" href="/css/adjust.css">
 </head>
 <body>
 <div id='fb-root'></div>
@@ -187,7 +187,7 @@ $pdo = null;
 </table>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
