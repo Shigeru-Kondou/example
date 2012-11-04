@@ -44,10 +44,8 @@ if(isset($_POST['signed_request'])){
 <title>取引価格検索</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link href="css/blue/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/blue/style.css">
 <link rel="stylesheet" href="css/adjust.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 </head>
 <body>
 <div id='fb-root'></div>
@@ -188,14 +186,16 @@ $pdo = null;
 ?>
 </table>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
 $(function() {
   $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
 });
-//window.fbAsyncInit = function() {
-//  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
-//  FB.Canvas.setAutoGrow({ width: 810, height: 1280 });
-//};
+window.fbAsyncInit = function() {
+  FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true, xfbml: true});
+  FB.Canvas.setAutoGrow({ width: 810, height: 1280 });
+};
 </script>
 <?php
 } // end of else
