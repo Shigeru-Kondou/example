@@ -193,14 +193,14 @@ $pdo = null;
   e.src = d.location.protocol + "//connect.facebook.net/ja_JP/all.js";
   d.getElementById('fb-root').appendChild(e);
 }());
+(function() {
+  $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
+  alert("called");
+}());
 window.fbAsyncInit = function() {
   FB.init({appId: '<?php echo $facebook->getAppId(); ?>', status: true, cookie: true});
   FB.Canvas.setAutoGrow();
 }
-$(function() {
-  $('#trades').tablesorter({ sortList: [[0,0]], widgets: ['zebra'] });
-  alert("called");
-});
 </script>
 
 <?php
